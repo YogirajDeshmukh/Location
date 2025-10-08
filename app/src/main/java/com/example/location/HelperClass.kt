@@ -61,7 +61,7 @@ class HelperClass(val context : Context) {
         val addresses: MutableList<Address>?=
             geocoder.getFromLocation(coordinate.latitude,coordinate.longitude,1)
 
-        return if (addresses?.isEmpty() == true){
+        return if (addresses?.isNotEmpty() == true){
             addresses[0].getAddressLine(0)
         }else{
             "Address Not Found !!!"
